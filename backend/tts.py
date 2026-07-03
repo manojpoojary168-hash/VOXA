@@ -4,7 +4,7 @@ import numpy as np
 import os
 import time
 
-pipeline = KPipeline(lang_code="a")
+pipeline = None
 
 OUTPUT_DIR = "outputs"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -29,6 +29,11 @@ VOICE_MAP = {
 
 
 def generate_speech(text: str, voice: str):
+    global pipeline
+
+    if pipeline is None:
+        pipeline = KPipeline(lang_code="a")
+
     kokoro_voice = VOICE_MAP.get(voice, "af_heart")
 
     generator = pipeline(
