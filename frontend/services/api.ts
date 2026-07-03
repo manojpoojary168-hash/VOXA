@@ -1,6 +1,6 @@
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL ||
-  "http://127.0.0.1:8000";
+  "https://voxa-production-b5a2.up.railway.app";
 
 export async function generateVoice(text: string, voice: string) {
   const response = await fetch(`${API_URL}/generate`, {
