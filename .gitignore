@@ -141,3 +141,13 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+# Python
+backend/venv/
+backend/__pycache__/
+backend/outputs/
+backend/*.wav
+backend/.env
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
